@@ -30,34 +30,44 @@
 		</nav>
 	</header>
 	<main>
-		<section id="calendar">
+		<section id="calendar">		
 			<h1>Календарь</h1>
-			<h2>Настройки поиска</h2>
-			<form><select multiple>
-				<option disabled>Выберите тип мероприятия</option>
-				<option value="Концерт">Концерт</option>
-				<option value="Спектакль">Спектакль</option>
-				<option value="Квартирник">Квартирник</option>
-			</select><br>
-			<select multiple>
-				<option disabled>Выберите город</option>
-				<option value="Москва">Москва</option>
-				<option value="Санкт-Петербург">Санкт-Петербург</option>
-				<option value="Другое">Другое</option>
-			</select><br>
-			<select multiple>
-				<option disabled>Выберите артистов</option>
-				<option value="Бока">Бока</option>
-				<option value="Жока">Жока</option>
-			</select><br>
-			<input type="submit" value="Отправить"></form><br>
-			<form>
-				<input name="show" type="radio" value="all">Показать все</p>
-				<p><input name="show" type="radio" value="filtered" checked>Показать только подходящие</p>
-				<p><input type="submit" value="Отправить"></p>
-			</form>
-			<p>Скоро тут будет интерактивный календарь, а пока смотрите, какая красивая картинка</p>
-			<img src="source\img\calendar.jpg" alt="Календарь" width="500"><br>
+			<div style="display: flex">
+				<div>
+					<h2>Настройки поиска</h2>
+					<form><select multiple>
+						<option disabled>Выберите тип мероприятия</option>
+						<option value="Концерт">Концерт</option>
+						<option value="Спектакль">Спектакль</option>
+						<option value="Квартирник">Квартирник</option>
+					</select><br>
+					<select multiple>
+						<option disabled>Выберите город</option>
+						<option value="Москва">Москва</option>
+						<option value="Санкт-Петербург">Санкт-Петербург</option>
+						<option value="Другое">Другое</option>
+					</select><br>
+					<select multiple>
+						<option disabled>Выберите артистов</option>
+						<option value="Бока">Бока</option>
+						<option value="Жока">Жока</option>
+					</select><br>
+					<button type="button" id="searchSpecific">Поиск по конкретному составу</button><br>
+					<button type="reset">Сбросить фильтры</button><br>
+					<button type="submit">Отправить</button></form><br>
+				</div>
+
+				<div>
+					<h2>Настройки отображения</h2>
+					<form>
+						<input name="show" type="radio" value="all">Показать все</p>
+						<p><input name="show" type="radio" value="filtered" checked>Показать только подходящие</p>
+						<button type="submit">Отправить</button>
+					</form>
+					<p>Скоро тут будет интерактивный календарь, а пока смотрите, какая красивая картинка</p>
+					<img src="source\img\calendar.jpg" alt="Календарь" width="500"><br>
+				</div>
+			</div>
 			<h2>Как искать мероприятия</h2>
 			<p>
 				<ol>
@@ -83,19 +93,20 @@
 				<option value="1">Мероприятие 1</option>
 				<option value="2">Мероприятие 2</option>
 			</select><br>
-			<input type="submit" value="Отправить"></form><br>
+			<button type="reset">Сбросить фильтры</button>
+			<button type="submit">Отправить</button></form><br>
 			<form>
 			<h2>Найденные артисты:</h2>
-			<div class="row" style="display: flex">
-				<div class="column">
+			<div style="display: flex">
+				<div>
 					<img src="source\img\avatar.jpg" alt="Артист" width="200">
 					<a><p>Об артисте</p></a>
 				</div>
-				<div class="column">
+				<div>
 					<img src="source\img\avatar.jpg" alt="Артист" width="200">
 					<a><p>Об артисте</p></a>
 				</div>
-				<div class="column">
+				<div>
 					<img src="source\img\avatar.jpg" alt="Артист" width="200">
 					<a><p>Об артисте</p></a>
 				</div>
@@ -152,19 +163,20 @@
 				<option value="Бока">Бока</option>
 				<option value="Жока">Жока</option>
 			</select><br>
-			<input type="submit" value="Отправить"></form><br>
+			<button type="reset">Сбросить фильтры</button>
+			<button type="submit">Отправить</button></form><br>
 			<form>
 			<h2>Найденные мероприятия:</h2>
-			<div class="row" style="display: flex">
-				<div class="column">
+			<div style="display: flex">
+				<div>
 					<img src="source\img\show.jpg" alt="Мероприятие" width="200">
 					<a><p>О мероприятии</p></a>
 				</div>
-				<div class="column">
+				<div>
 					<img src="source\img\show.jpg" alt="Мероприятие" width="200">
 					<a><p>О мероприятии</p></a>
 				</div>
-				<div class="column">
+				<div>
 					<img src="source\img\show.jpg" alt="Мероприятие" width="200">
 					<a><p>О мероприятии</p></a>
 				</div>
