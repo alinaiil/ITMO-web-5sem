@@ -1,0 +1,197 @@
+* {
+    font-family: 'Lucida Sans Unicode', 'Lucida Grande', sans-serif;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+header {
+    color: #FFFFFF;
+    background-color: #8FE381;
+    text-shadow: 1px 1px 1px #77DD66;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    border-bottom-color: #77DD66;
+    border-bottom-width: 5px;
+    border-bottom-style: dashed;
+}
+
+.logo {
+    margin: 5px;
+}
+
+.nav {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    overflow: hidden;
+    background-color: #A7E99C;
+    float: right;
+    border-radius: 20px;
+}
+
+.nav a {
+    float: left;
+    color: white;
+    text-align: center;
+    font-weight: normal;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 15px;
+}
+
+.nav a:hover {
+    background-color: #77DD66;
+    text-decoration: underline;
+}
+
+.calendar, .artists, .shows {
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+}
+
+.calendar {
+    margin: 20px;
+}
+
+.artists, .shows {
+    gap: 135px;
+    align-items: center;
+    justify-content: center;
+}
+
+footer {
+    color: #FFFFFF;
+    background-color: #8FE381;
+    text-shadow: 1px 1px 1px #77DD66;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    border-top-color: #77DD66;
+    border-top-width: 5px;
+    border-top-style: dashed;
+    align-items: center;
+    justify-content: center;
+}
+
+.title {
+    text-align: center;
+    color: #77DD66;
+    font-size: 30px;
+    margin: 10px;
+    font-weight: bold;
+}
+
+.sub_title {
+    color: #77DD66;
+    font-size: 20px;
+}
+
+strong, b, em, i {
+    color: #77DD66;
+}
+
+.calendar_view {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    color: #6D6D6D;
+    font-size: 15px;
+}
+
+.calendar_form {
+    display: flex;
+    flex-direction: column;
+}
+
+.shows_form, .artists_form{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+}
+
+.show_img:hover, .artist_img:hover {
+    filter: drop-shadow(5px 5px 5px #8FE381);
+}
+
+.show_img, .artist_img {
+    width: 250px;
+}
+
+.contacts_img {
+    width: 40px;
+    float: left;
+    padding: 5px 5px;
+}
+
+.contacts_img:hover {
+    filter: drop-shadow(1px 1px 1px #D7F4D2);
+}
+
+.info {
+    text-align: center;
+    margin: 5px;
+    line-height: 25px;
+}
+
+.artists_search, .shows_search, .calendar_search, .calendar_view_search {
+    background-color: #D7F4D2;
+    margin: 5px;
+    padding: 10px;
+    border-radius: 20px;
+    border-color: #A7E99C;
+    border-width: 2px;
+    border-style: dashed;
+}
+
+.found_calendar, .found_artists, .found_shows {
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.button {
+    background-color: #F7FDF6;
+    padding: 10px 20px;
+    border-radius: 10px;
+    border-style: solid;
+    border-color: #A7E99C;
+    color: #77DD66;
+    box-shadow: 5px 5px 5px #A7E99C;
+    text-shadow: 0 0 0 #77DD66;
+}
+
+.button:hover {
+    background-color: #BFEEB7;
+}
+
+.button:active {
+    background-color: #A7E99C;
+    box-shadow: none;
+    transform: translateY(4px);
+}
+
+.select_mult {
+    background-color: #F7FDF6;
+    padding: 10px 20px;
+    border-radius: 10px;
+    border-style: solid;
+    border-color: #A7E99C;
+    color: #77DD66;
+    box-shadow: 5px 5px 5px #A7E99C;
+    text-shadow: 0 0 0 #77DD66;
+}
+
+option:checked {
+    background: #A7E99C linear-gradient(0deg, #A7E99C 0%, #A7E99C 100%);
+    color: white;
+}
+
+input[type="radio"]:checked {
+    accent-color: #77DD66;
+}

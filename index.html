@@ -1,207 +1,180 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-	<title>Театральный календарь</title>
-	<meta charset="UTF-8">
-	<meta name="keywords" content="Театральный календарь, Календарь составов">
-	<meta name="description" content="Театральный календарь с фильтрами по городам, типам мероприятий и составам">
-	<meta name="author" content="Алина Ильясова">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Театральный календарь</title>
+    <meta charset="UTF-8">
+    <meta name="keywords" content="Театральный календарь, Календарь составов">
+    <meta name="description" content="Театральный календарь с фильтрами по городам, типам мероприятий и составам">
+    <meta name="author" content="Алина Ильясова">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="source/css/main.css">
+    <link rel="icon" href="source/img/icon.png"/>
 </head>
 <body>
-	<script src="source\js\outline-control.js"></script>
-	<header>
-		<nav>
-			<h1>Меню</h1>
-			<ul>
-				<li>
-					<a>О сайте</a>
-				</li>
-				<li>
-					<a href="#calendar">Календарь</a>
-				</li>
-				<li>
-					<a href="#artists">Артисты</a>
-				</li>
-				<li>
-					<a href="#shows">Мероприятия</a>
-				</li>
-			</ul>
-		</nav>
-	</header>
-	<main>
-		<section id="calendar">		
-			<h1>Календарь</h1>
-			<div style="display: flex">
-				<div>
-					<h2>Настройки поиска</h2>
-					<form><select multiple>
-						<option disabled>Выберите тип мероприятия</option>
-						<option value="Концерт">Концерт</option>
-						<option value="Спектакль">Спектакль</option>
-						<option value="Квартирник">Квартирник</option>
-					</select><br>
-					<select multiple>
-						<option disabled>Выберите город</option>
-						<option value="Москва">Москва</option>
-						<option value="Санкт-Петербург">Санкт-Петербург</option>
-						<option value="Другое">Другое</option>
-					</select><br>
-					<select multiple>
-						<option disabled>Выберите артистов</option>
-						<option value="Бока">Бока</option>
-						<option value="Жока">Жока</option>
-					</select><br>
-					<button type="button" id="searchSpecific">Поиск по конкретному составу</button><br>
-					<button type="reset">Сбросить фильтры</button><br>
-					<button type="submit">Отправить</button></form><br>
-				</div>
+<script src="source/js/outline-control.js"></script>
+<header>
+    <div class="logo">
+        <a href="#"><img src="source/img/logo.png" alt="logo" height="55"></a>
+    </div>
+    <nav>
+        <div class="nav">
+            <a href="#">О сайте</a>
+            <a href="#calendar">Календарь</a>
+            <a href="#artists">Артисты</a>
+            <a href="#shows">Мероприятия</a>
+        </div>
+    </nav>
+</header>
+<main>
+    <section id="calendar">
+        <h1 class="title">Календарь</h1>
+        <div class="calendar">
+            <div class="calendar_search">
+                <h2 class="sub_title">Настройки поиска</h2>
+                <form class="calendar_form"><label>
+                    <select multiple class="select_mult">
+                        <option disabled>Выберите тип мероприятия</option>
+                        <option value="Концерт">Концерт</option>
+                        <option value="Спектакль">Спектакль</option>
+                        <option value="Квартирник">Квартирник</option>
+                    </select>
+                </label><br>
+                    <label>
+                        <select multiple class="select_mult">
+                            <option disabled>Выберите город</option>
+                            <option value="Москва">Москва</option>
+                            <option value="Санкт-Петербург">Санкт-Петербург</option>
+                            <option value="Другое">Другое</option>
+                        </select>
+                    </label><br>
+                    <label>
+                        <select multiple class="select_mult">
+                            <option disabled>Выберите артистов</option>
+                            <option value="Бока">Бока</option>
+                            <option value="Жока">Жока</option>
+                        </select>
+                    </label><br>
+                    <button type="button" id="searchSpecific" class="button">Поиск по конкретному составу</button>
+                    <br>
+                    <button type="reset" class="button">Сбросить фильтры</button>
+                    <br>
+                    <button type="submit" class="button">Отправить</button>
+                </form>
+                <br>
+            </div>
 
-				<div>
-					<h2>Настройки отображения</h2>
-					<form>
-						<input name="show" type="radio" value="all">Показать все</p>
-						<p><input name="show" type="radio" value="filtered" checked>Показать только подходящие</p>
-						<button type="submit">Отправить</button>
-					</form>
-					<p>Скоро тут будет интерактивный календарь, а пока смотрите, какая красивая картинка</p>
-					<img src="source\img\calendar.jpg" alt="Календарь" width="500"><br>
-				</div>
-			</div>
-			<h2>Как искать мероприятия</h2>
-			<p>
-				<ol>
-					<li>Сначала сделайте это</li>
-					<li>Потом это</li>
-					<li>А потом вот это</li>
-				</ol>
-			</p>
-		</section>
-		<section id="artists">
-			<h1>Артисты</h1>
-			<article>
-			<p>Французская актриса <cite>Сара Бернар</cite> говорила: <q>Велик тот артист, который заставляет зрителей забыть о деталях.</q></p>
-			<h2>Настройки поиска артиста</h2>
-			<form><select multiple>
-				<option disabled>Выберите город</option>
-				<option value="Москва">Москва</option>
-				<option value="Санкт-Петербург">Санкт-Петербург</option>
-				<option value="Другое">Другое</option>
-			</select><br>
-			<select multiple>
-				<option disabled>Выберите мероприятия, в которых артист принимает участие</option>
-				<option value="1">Мероприятие 1</option>
-				<option value="2">Мероприятие 2</option>
-			</select><br>
-			<button type="reset">Сбросить фильтры</button>
-			<button type="submit">Отправить</button></form><br>
-			<form>
-			<h2>Найденные артисты:</h2>
-			<div style="display: flex">
-				<div>
-					<img src="source\img\avatar.jpg" alt="Артист" width="200">
-					<a><p>Об артисте</p></a>
-				</div>
-				<div>
-					<img src="source\img\avatar.jpg" alt="Артист" width="200">
-					<a><p>Об артисте</p></a>
-				</div>
-				<div>
-					<img src="source\img\avatar.jpg" alt="Артист" width="200">
-					<a><p>Об артисте</p></a>
-				</div>
-			</div>
-			<p>А ещё у нас есть крутая капибара.</p>
-			<pre>
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣸⣬⠷⣶⡖⠲⡄⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⣠⠶⠋⠁⠀⠸⣿⡀⠀⡁⠈⠙⠢⠤⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⢠⠞⠁⠀⠀⠀⠀⠀⠉⠣⠬⢧⠀⠀⠀⠀⠈⠻⣤⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⢀⡴⠃⠀⠀⢠⣴⣿⡿⠀⠀⠀⠐⠋⠀⠀⠀⠀⠀⠀⠘⠿⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⢀⡴⠋⠀⠀⠀⠀⠈⠉⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠙⠒⠒⠓⠛⠓⠶⠶⢄⣀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⢠⠎⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠙⠦⣀⠀⠀⠀⠀⠀⠀⠀⠀
-⡞⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠸⢷⡄⠀⠀⠀⠀⠀⠀
-⢻⣇⣹⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⢦⡀⠀⠀⠀⠀
-⠀⠻⣟⠋⠀⠀⠀⠀⠀⣀⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠻⣄⠀⠀⠀
-⠀⠀⠀⠉⠓⠒⠊⠉⠉⢸⡙⠇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡀⠀⠀⠀⠀⠘⣆⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣱⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣿⠀⠀⠀⠀⠀⢻⡄⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠟⣧⡀⠀⠀⢀⡄⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡿⠇⠀⠀⠀⠀⠀⠀⢣⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠠⡧⢿⡀⠚⠿⢻⡆⠀⠀⠀⠀⠀⢠⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⡇⠀⠀⠀⠀⠀⠀⠀⠘⡆
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⣿⠀⠀⠈⢹⡀⠀⠀⠀⠀⣾⡆⠀⠀⠀⠀⠀⠀⠀⠀⠾⠇⠀⠀⠀⠀⠀⠀⠀⠀⠀⡇
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠨⢷⣾⠀⠸⡷⠀⠀⠀⠘⡿⠂⠀⠀⠀⢀⡴⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⡇
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⡄⠳⢼⣧⡀⠀⠀⢶⡼⠦⠀⠀⠀⡞⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⠃
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⡇⠀⡎⣽⠿⣦⣽⣷⠿⠒⠀⠀⠀⣇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣸⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣸⠁⣴⠃⡿⠀⠀⢠⠆⠢⡀⠀⠀⠀⠈⢧⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⠇⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣠⣠⠏⠀⣸⢰⡇⠀⢠⠏⠀⠀⠘⢦⣀⣀⠀⢀⠙⢧⡀⠀⠀⠀⠀⠀⠀⠀⠀⡰⠁⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠾⠿⢯⣤⣆⣤⣯⠼⠀⠀⢸⠀⠀⠀⠀⠀⣉⠭⠿⠛⠛⠚⠟⡇⠀⠀⣀⠀⢀⡤⠊⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠉⠀⢸⣷⣶⣤⣦⡼⠀⠀⠀⣴⣯⠇⡀⣀⣀⠤⠤⠖⠁⠐⠚⠛⠉⠁⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣛⠁⢋⡀⠀⠀⠀⠀⣛⣛⠋⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-			</pre>
-		</section>
-		<section id="shows">
-			<h1>Мероприятия</h1>
-			<article>
-				<p><strong>Внимание!</strong> Никогда не покупайте билеты с рук у незнакомых людей или на незнакомых неофициальных сайтах. Это могут быть мошенники.</p>
-				<p>У каждого электронного билета есть <b>штрихкод</b> и <b>QR-код</b> (англ. <i>Quick Respose code</i>), которые используются при входе для проверки подлинности билета. То есть, даже если вы придёте с билетом, который внешне будет очень похож на настоящий, администраторы, просканировав коды на билете, будут <em>уверены</em>, что перед ними подделка, и на мероприятие вас точно не пустят.</p>
-				<aside>Некоторые официальные сайты тоже могут вести себя как мошенники. Мне, например, уже почти два года не возвращают деньги за билет на концерт, который отменили в начале 2022 :(</aside>
-			</article>
-			<h2>Настройки поиска мероприятий</h2>
-			<form><select multiple>
-				<option disabled>Выберите тип мероприятия</option>
-				<option value="Концерт">Концерт</option>
-				<option value="Спектакль">Спектакль</option>
-				<option value="Квартирник">Квартирник</option>
-			</select><br>
-			<select multiple>
-				<option disabled>Выберите город</option>
-				<option value="Москва">Москва</option>
-				<option value="Санкт-Петербург">Санкт-Петербург</option>
-				<option value="Другое">Другое</option>
-			</select><br>
-			<select multiple>
-				<option disabled>Выберите артистов</option>
-				<option value="Бока">Бока</option>
-				<option value="Жока">Жока</option>
-			</select><br>
-			<button type="reset">Сбросить фильтры</button>
-			<button type="submit">Отправить</button></form><br>
-			<form>
-			<h2>Найденные мероприятия:</h2>
-			<div style="display: flex">
-				<div>
-					<img src="source\img\show.jpg" alt="Мероприятие" width="200">
-					<a><p>О мероприятии</p></a>
-				</div>
-				<div>
-					<img src="source\img\show.jpg" alt="Мероприятие" width="200">
-					<a><p>О мероприятии</p></a>
-				</div>
-				<div>
-					<img src="source\img\show.jpg" alt="Мероприятие" width="200">
-					<a><p>О мероприятии</p></a>
-				</div>
-			</div>
-			<p>А ещё у нас есть пример написания программы Hello World на Java.</p>
-			<pre><code>
-class HelloWorld {
-	public static void main(String[] args) {
-		System.out.println("Hello, World!"); 
-	}
-}
-			</code></pre>
-		</section>
-	</main>
-		<footer>
-			<h2>Контакты</h2>
-			<ul>
-				<li>Телефон:
-				<ul>
-				<li>+7-952-229-01-43</li>
-				<li>+7-747-205-42-87</li>
-				</ul>
-				</li>
-				<li>Телеграм: @alinaiil</li>
-			</ul>
-		</footer>
+            <div>
+                <div class="calendar_view_search">
+                    <h2 class="sub_title">Настройки отображения</h2>
+                    <form class="calendar_view">
+                        <label>
+                            <input name="show" type="radio" value="all">
+                        </label>Показать все
+                        <p><label>
+                            <input name="show" type="radio" value="filtered" checked>
+                        </label>Показать только подходящие</p>
+                        <button type="submit" class="button">Отправить</button>
+                    </form>
+                </div>
+                <div class="found_calendar">
+                    <p>Скоро тут будет интерактивный календарь, а пока смотрите, какая красивая картинка:</p>
+                    <img src="source/img/calendar.jpg" alt="Календарь" width="500"><br>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="artists">
+        <h1 class="title">Артисты</h1>
+        <div class="artists_search"><h2 class="sub_title">Настройки поиска артиста</h2>
+            <form class="artists_form"><select multiple class="select_mult">
+                <option disabled>Выберите город</option>
+                <option value="Москва">Москва</option>
+                <option value="Санкт-Петербург">Санкт-Петербург</option>
+                <option value="Другое">Другое</option>
+            </select><br>
+                <select multiple class="select_mult">
+                    <option disabled>Выберите мероприятия, в которых артист принимает участие</option>
+                    <option value="1">Мероприятие 1</option>
+                    <option value="2">Мероприятие 2</option>
+                </select><br>
+                <button type="reset" class="button">Сбросить фильтры</button>
+                <button type="submit" class="button">Отправить</button>
+            </form>
+        </div>
+        <br>
+        <div class="found_artists">
+            <h2 class="sub_title">Найденные артисты:</h2>
+            <div class="artists">
+                <div>
+                    <a href="#"><img src="source/img/avatar.png" alt="Артист" class="artist_img"></a>
+                </div>
+                <div>
+                    <a href="#"><img src="source/img/avatar.png" alt="Артист" class="artist_img"></a>
+                </div>
+                <div>
+                    <a href="#"><img src="source/img/avatar.png" alt="Артист" class="artist_img"></a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="shows">
+        <h1 class="title">Мероприятия</h1>
+        <article>
+            <p class="info"><strong>Внимание!</strong> Никогда не покупайте билеты с рук у незнакомых людей или на
+                незнакомых
+                неофициальных сайтах. Это могут быть мошенники.</p>
+            <p class="info">У каждого электронного билета есть <b>штрихкод</b> и <b>QR-код</b> (англ. <i>Quick Respose
+                code</i>),
+                которые используются при входе для проверки подлинности билета. То есть, даже если вы придёте с билетом,
+                который внешне будет очень похож на настоящий, администраторы, просканировав коды на билете, будут <em>уверены</em>,
+                что перед ними подделка, и на мероприятие вас точно не пустят.</p>
+        </article>
+        <div class="shows_search"><h2 class="sub_title">Настройки поиска мероприятий</h2>
+            <form class="shows_form">
+                <select multiple class="select_mult">
+                    <option disabled>Выберите тип мероприятия</option>
+                    <option value="Концерт">Концерт</option>
+                    <option value="Спектакль">Спектакль</option>
+                    <option value="Квартирник">Квартирник</option>
+                </select>
+                <br>
+                <select multiple class="select_mult">
+                    <option disabled>Выберите город</option>
+                    <option value="Москва">Москва</option>
+                    <option value="Санкт-Петербург">Санкт-Петербург</option>
+                    <option value="Другое">Другое</option>
+                </select>
+                <br>
+                <select multiple class="select_mult">
+                    <option disabled>Выберите артистов</option>
+                    <option value="Бока">Бока</option>
+                    <option value="Жока">Жока</option>
+                </select><br>
+                <button type="reset" class="button">Сбросить фильтры</button>
+                <button type="submit" class="button">Отправить</button>
+            </form>
+        </div>
+        <br>
+        <div class="found_shows">
+            <h2 class="sub_title">Найденные мероприятия:</h2>
+            <div class="shows">
+                <div>
+                    <a href="#"><img src="source/img/show.jpg" alt="Мероприятие" class="show_img"></a>
+                </div>
+                <div>
+                    <a href="#"><img src="source/img/show.jpg" alt="Мероприятие" class="show_img"></a>
+                </div>
+                <div>
+                    <a href="#"><img src="source/img/show.jpg" alt="Мероприятие" class="show_img"></a>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+<footer>
+    <a href="https://t.me/alinaiil"><img src="source/img/telegram.png" alt="Telegram" class="contacts_img"></a>
+    <a href="https://github.com/alinaiil"><img src="source/img/github.png" alt="Github" class="contacts_img"></a>
+    <a href="mailto:alinail03@mail.ru"><img src="source/img/email.png" alt="Email" class="contacts_img"></a>
+</footer>
 </body>
 </html>
