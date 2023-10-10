@@ -6,23 +6,48 @@
 }
 
 header {
+    height: 78px;
     color: #FFFFFF;
     background-color: #8FE381;
     text-shadow: 1px 1px 1px #77DD66;
-    display: flex;
-    flex-direction: row;
     gap: 20px;
     border-bottom-color: #77DD66;
     border-bottom-width: 5px;
     border-bottom-style: dashed;
 }
 
-.logo {
-    margin: 5px;
+@media screen and (max-width: 800px) {
+    .artists, .shows, .calendar {
+        flex-direction: column;
+    }
+
+    .logo-big {
+        display: none;
+    }
+
+    .logo-small {
+        margin: 5px;
+        position: absolute;
+        left: 10px;
+        top: 5px;
+    }
+}
+
+@media screen and (min-width: 800px) {
+    .logo-big {
+        position: absolute;
+        left: 10px;
+        top: 5px;
+        margin: 5px;
+    }
+
+    .logo-small {
+        display: none;
+    }
 }
 
 .nav {
-    position: absolute;
+    position: fixed;
     right: 10px;
     top: 10px;
     overflow: hidden;
@@ -48,7 +73,6 @@ header {
 
 .calendar, .artists, .shows {
     display: flex;
-    flex-direction: row;
     gap: 50px;
 }
 
@@ -106,16 +130,69 @@ strong, b, em, i {
     flex-direction: column;
 }
 
+.calendar_table_dates>div:nth-child(14n+1),
+.calendar_table_dates>div:nth-child(14n+2),
+.calendar_table_dates>div:nth-child(14n+3),
+.calendar_table_dates>div:nth-child(14n+4),
+.calendar_table_dates>div:nth-child(14n+5),
+.calendar_table_dates>div:nth-child(14n+6),
+.calendar_table_dates>div:nth-child(14n+7)
+{
+    background: #D7F4D2;
+    border-color: #A7E99C;
+    border-width: 1px;
+    border-style: dashed;
+}
+
+.calendar_table_dates>div:nth-child(7n+1),
+.calendar_table_dates>div:nth-child(7n+2),
+.calendar_table_dates>div:nth-child(7n+3),
+.calendar_table_dates>div:nth-child(7n+4),
+.calendar_table_dates>div:nth-child(7n+5),
+.calendar_table_dates>div:nth-child(7n+6)
+{
+    border-top-color: #A7E99C;
+    border-top-width: 1px;
+    border-top-style: dashed;
+    border-right-color: #A7E99C;
+    border-right-width: 1px;
+    border-right-style: dashed;
+}
+
+.calendar_table_dates{
+    grid-template-rows: repeat(6, 70px);
+}
+
+.calendar_table_month {
+    text-align: center;
+}
+
+.calendar_table_day_of_week {
+    background-color: #BFEEB7;
+}
+
+.calendar_table_day_of_week, .calendar_table_dates {
+    text-align: center;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+}
+
+.calendar_table {
+    border-radius: 20px;
+    border-color: #A7E99C;
+    border-width: 2px;
+    border-style: dashed;
+}
+
 .shows_form, .artists_form{
     display: flex;
-    flex-direction: row;
     gap: 10px;
     align-items: center;
     justify-content: center;
 }
 
 .show_img:hover, .artist_img:hover {
-    filter: drop-shadow(5px 5px 5px #8FE381);
+	filter: drop-shadow(5px 5px 5px #8FE381);
 }
 
 .show_img, .artist_img {
