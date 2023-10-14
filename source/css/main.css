@@ -16,9 +16,17 @@ header {
     border-bottom-style: dashed;
 }
 
-@media screen and (max-width: 800px) {
-    .artists, .shows, .calendar {
+.main {
+    display: block;
+}
+
+@media screen and (max-width: 1000px) {
+    .artists, .shows, .calendar, .artists_form, .shows_form {
         flex-direction: column;
+    }
+
+    .logo-big, .logo_small {
+        display: none;
     }
 
     .logo-big {
@@ -26,14 +34,45 @@ header {
     }
 
     .logo-small {
-        margin: 5px;
         position: absolute;
+        margin: 5px;
         left: 10px;
         top: 5px;
     }
+
+    .nav_menu {
+        text-align: center;
+        color: #FFFFFF;
+        text-decoration: none;
+        padding: 10px;
+        position: absolute;
+        right: 10px;
+        top: 1rem;
+        overflow: hidden;
+        background-color: #A7E99C;
+        float: right;
+        border-radius: 20px;
+    }
+
+    .nav_menu a {
+        float: left;
+        color: white;
+        text-align: center;
+        font-weight: normal;
+        text-decoration: none;
+    }
+
+    .nav_menu a:hover {
+        background-color: #77DD66;
+        text-decoration: underline;
+    }
+
+    .nav {
+        display: none;
+    }
 }
 
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 1000px) {
     .logo-big {
         position: absolute;
         left: 10px;
@@ -41,13 +80,13 @@ header {
         margin: 5px;
     }
 
-    .logo-small {
+    .logo-small, .nav_menu {
         display: none;
     }
 }
 
 .nav {
-    position: fixed;
+    position: absolute;
     right: 10px;
     top: 10px;
     overflow: hidden;
