@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Мероприятия</title>
+    <meta name="keywords" content="Театральный календарь, Календарь составов">
+    <meta name="description" content="Театральный календарь с фильтрами по городам, типам мероприятий и составам">
+    <meta name="author" content="Алина Ильясова">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="source/img/icon.png"/>
+    <link rel="stylesheet" href="source/css/main.css">
+    <script src="source/js/pageload.js"></script>
+</head>
+<body>
+<header>
+    <div class="logo">
+        <div class="logo-big">
+            <a href="#"><img src="source/img/logo.png" alt="logo" height="55"></a>
+        </div>
+        <div class="logo-small">
+            <a href="#"><img src="source/img/icon.png" alt="logo" height="55"></a>
+        </div>
+    </div>
+    <nav>
+        <div class="nav">
+            <a href="index.html">Календарь</a>
+            <a href="artists.html">Артисты</a>
+            <a class="active" href="shows.html">Мероприятия</a>
+            <a href="cast.html">Составы</a>
+        </div>
+        <div class="up">
+            <a href="#"><img src="source/img/up.png" alt="up_button" height="55"></a>
+        </div>
+    </nav>
+</header>
+<main>
+    <section id="shows">
+        <h1 class="title">Мероприятия</h1>
+        <article>
+            <p class="info"><strong>Внимание!</strong> Никогда не покупайте билеты с рук у незнакомых людей или на
+                незнакомых
+                неофициальных сайтах. Это могут быть мошенники.</p>
+            <p class="info">У каждого электронного билета есть <b>штрихкод</b> и <b>QR-код</b> (англ. <i>Quick Respose
+                code</i>),
+                которые используются при входе для проверки подлинности билета. То есть, даже если вы придёте с билетом,
+                который внешне будет очень похож на настоящий, администраторы, просканировав коды на билете, будут <em>уверены</em>,
+                что перед ними подделка, и на мероприятие вас точно не пустят.</p>
+        </article>
+        <div class="shows_search"><h2 class="sub_title">Настройки поиска мероприятий</h2>
+            <form class="shows_form">
+                <select multiple class="select_mult">
+                    <option disabled>Выберите тип мероприятия</option>
+                    <option value="Концерт">Концерт</option>
+                    <option value="Спектакль">Спектакль</option>
+                    <option value="Квартирник">Квартирник</option>
+                </select>
+                <br>
+                <select multiple class="select_mult">
+                    <option disabled>Выберите город</option>
+                    <option value="Москва">Москва</option>
+                    <option value="Санкт-Петербург">Санкт-Петербург</option>
+                    <option value="Другое">Другое</option>
+                </select>
+                <br>
+                <select multiple class="select_mult">
+                    <option disabled>Выберите артистов</option>
+                    <option value="Бока">Бока</option>
+                    <option value="Жока">Жока</option>
+                </select><br>
+                <button type="reset" class="button">Сбросить фильтры</button>
+                <button type="submit" class="button">Отправить</button>
+            </form>
+        </div>
+        <br>
+        <div class="found_shows">
+            <h2 class="sub_title">Найденные мероприятия:</h2>
+            <div class="shows">
+                <div>
+                    <a href="#"><img src="source/img/show.jpg" alt="Мероприятие" class="show_img"></a>
+                </div>
+                <div>
+                    <a href="#"><img src="source/img/show.jpg" alt="Мероприятие" class="show_img"></a>
+                </div>
+                <div>
+                    <a href="#"><img src="source/img/show.jpg" alt="Мероприятие" class="show_img"></a>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+<footer>
+    <p id="load_time"></p>
+    <a href="https://t.me/alinaiil"><img src="source/img/telegram.png" alt="Telegram" class="contacts_img"></a>
+    <a href="https://github.com/alinaiil"><img src="source/img/github.png" alt="Github" class="contacts_img"></a>
+    <a href="mailto:alinail03@mail.ru"><img src="source/img/email.png" alt="Email" class="contacts_img"></a>
+</footer>
+</body>
+</html>
