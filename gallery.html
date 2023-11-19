@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Галерея</title>
+    <meta name="keywords" content="Театральный календарь, Календарь составов">
+    <meta name="description" content="Театральный календарь с фильтрами по городам, типам мероприятий и составам">
+    <meta name="author" content="Алина Ильясова">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="source/img/icon.png"/>
+    <link rel="stylesheet" href="source/css/main.css">
+    <script src="source/js/gallery.js"></script>
+    <script src="source/js/scrollUp.js"></script>
+</head>
+<body>
+<header>
+    <div class="logo">
+        <div class="logo-big">
+            <a href="#"><img src="source/img/logo.png" alt="logo" height="55"></a>
+        </div>
+        <div class="logo-small">
+            <a href="#"><img src="source/img/icon.png" alt="logo" height="55"></a>
+        </div>
+    </div>
+    <nav>
+        <div class="nav">
+            <a href="index.html">Календарь</a>
+            <a href="artists.html">Артисты</a>
+            <a href="shows.html">Мероприятия</a>
+            <a href="cast.html">Составы</a>
+            <a class="active" href="gallery.html">Галерея</a>
+        </div>
+        <div id="upButton" onclick="scrollToTop()">
+            <img src="source/img/up.png" alt="up_button" height="55">
+        </div>
+    </nav>
+</header>
+<main>
+    <section id="gallery">
+        <h1 class="title">Галерея</h1>
+        <div class="preloader">
+             <div class="custom-animation"></div>
+        </div>
+        <div id="galleryShow"></div>
+    </section>
+</main>
+<footer>
+    <p id="load_time"></p>
+    <a href="https://t.me/alinaiil"><img src="source/img/telegram.png" alt="Telegram" class="contacts_img"></a>
+    <a href="https://github.com/alinaiil"><img src="source/img/github.png" alt="Github" class="contacts_img"></a>
+    <a href="mailto:alinail03@mail.ru"><img src="source/img/email.png" alt="Email" class="contacts_img"></a>
+</footer>
+</body>
+</html>

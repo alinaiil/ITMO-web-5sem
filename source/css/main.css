@@ -5,6 +5,14 @@
     margin: 0;
 }
 
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
 header {
     height: 78px;
     color: #FFFFFF;
@@ -39,37 +47,6 @@ header {
         left: 10px;
         top: 5px;
     }
-
-    .nav_menu {
-        text-align: center;
-        color: #FFFFFF;
-        text-decoration: none;
-        padding: 10px;
-        position: absolute;
-        right: 10px;
-        top: 1rem;
-        overflow: hidden;
-        background-color: #A7E99C;
-        float: right;
-        border-radius: 20px;
-    }
-
-    .nav_menu a {
-        float: left;
-        color: white;
-        text-align: center;
-        font-weight: normal;
-        text-decoration: none;
-    }
-
-    .nav_menu a:hover {
-        background-color: #77DD66;
-        text-decoration: underline;
-    }
-
-    .nav {
-        display: none;
-    }
 }
 
 @media screen and (min-width: 1000px) {
@@ -80,7 +57,7 @@ header {
         margin: 5px;
     }
 
-    .logo-small, .nav_menu {
+    .logo-small {
         display: none;
     }
 }
@@ -106,8 +83,22 @@ header {
 }
 
 .nav a:hover {
-    background-color: #77DD66;
+    font-size: 17px;
+    text-shadow: 5px 5px 5px #77DD66;
+}
+
+.nav .active {
+    font-size: 17px;
     text-decoration: underline;
+}
+
+#upButton {
+    position: fixed;
+    right: 10px;
+    bottom: 20px;
+    float: right;
+    filter: drop-shadow(2px 2px 2px #8FE381);
+    cursor: pointer;
 }
 
 .calendar, .artists, .shows {
@@ -137,14 +128,52 @@ footer {
     border-top-style: dashed;
     align-items: center;
     justify-content: center;
+    margin-top: auto;
 }
 
-.title {
+.title, .generated_title {
     text-align: center;
     color: #77DD66;
     font-size: 30px;
     margin: 10px;
     font-weight: bold;
+}
+
+.generated_title {
+    display: none
+}
+
+.generated_cast {
+    align-items: center;
+    justify-content: center;
+}
+
+.generated_cast_table {
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border-radius: 20px;
+    border-color: #A7E99C;
+    border-width: 2px;
+    border-style: dashed;
+    padding: 10px;
+    margin: 10px auto;
+}
+
+.cast_head_row {
+    text-align: center;
+    color: #77DD66;
+    font-weight: bold;
+}
+
+.cast_role_name {
+    background-color: #D7F4D2;
+}
+
+.cast_role_name, .cast_artist_name {
+    border-radius: 20px;
+    border-color: #BFEEB7;
+    text-align: center;
 }
 
 .sub_title {
@@ -223,8 +252,23 @@ strong, b, em, i {
     border-style: dashed;
 }
 
-.shows_form, .artists_form{
+.shows_form, .artists_form {
     display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+}
+
+.cast_table_form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: space-evenly;
+}
+
+.cast_table_from_row {
+    display: flex;
+    flex-direction: row;
     gap: 10px;
     align-items: center;
     justify-content: center;
@@ -254,7 +298,7 @@ strong, b, em, i {
     line-height: 25px;
 }
 
-.artists_search, .shows_search, .calendar_search, .calendar_view_search {
+.artists_search, .shows_search, .calendar_search, .calendar_view_search, .cast_table {
     background-color: #D7F4D2;
     margin: 5px;
     padding: 10px;
@@ -310,4 +354,70 @@ option:checked {
 
 input[type="radio"]:checked {
     accent-color: #77DD66;
+}
+
+.error {
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+    background-color: #D7F4D2;
+    padding: 10px;
+    border-radius: 20px;
+    border-color: #A7E99C;
+    border-width: 2px;
+    border-style: dashed;
+}
+
+.preloader {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@keyframes customAnimation {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.preloader .custom-animation {
+    width: 50px;
+    height: 50px;
+    border: 8px solid #D7F4D2;
+    border-top: 8px solid #77DD66;
+    border-radius: 100%;
+    animation: customAnimation 1s linear infinite;
+}
+
+.content-loaded {
+    display: none;
+}
+
+#galleryShow {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    max-width: 100vw;
+    padding: 20px;
+}
+
+#galleryShow figure {
+    margin: 10px;
+    text-align: center;
+    width: 200px;
+    overflow: hidden;
+}
+
+#galleryShow img {
+    max-width: 100%;
+    height: auto;
+}
+
+#galleryShow figcaption {
+    margin-top: 10px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }

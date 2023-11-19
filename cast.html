@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Составы</title>
+    <meta name="keywords" content="Театральный календарь, Календарь составов">
+    <meta name="description" content="Театральный календарь с фильтрами по городам, типам мероприятий и составам">
+    <meta name="author" content="Алина Ильясова">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="source/img/icon.png"/>
+    <link rel="stylesheet" href="source/css/main.css">
+    <script src="source/js/scrollUp.js"></script>
+</head>
+<body>
+<header>
+    <div class="logo">
+        <div class="logo-big">
+            <a href="#"><img src="source/img/logo.png" alt="logo" height="55"></a>
+        </div>
+        <div class="logo-small">
+            <a href="#"><img src="source/img/icon.png" alt="logo" height="55"></a>
+        </div>
+    </div>
+    <nav>
+        <div class="nav">
+            <a href="index.html">Календарь</a>
+            <a href="artists.html">Артисты</a>
+            <a href="shows.html">Мероприятия</a>
+            <a class="active" href="cast.html">Составы</a>
+            <a href="gallery.html">Галерея</a>
+        </div>
+        <div id="upButton" onclick="scrollToTop()">
+            <img src="source/img/up.png" alt="up_button" height="55">
+        </div>
+    </nav>
+</header>
+<main>
+    <section id="artists">
+        <h1 class="title">Составы</h1>
+        <p class="info">Вы можете сгенерировать таблицу составов для спектакля.</p>
+        <p class="info">Выберите количество ролей и составов и нажмите кнопку "Сгенерировать".</p>
+        <p class="info">Для сохранения настроек нажмите "Сохранить". После этого нужные параметры можно будет загрузить
+        по кнопке "Восстановить".</p>
+        <div class="cast_table"><h2 class="sub_title">Настройки таблицы составов</h2>
+            <form class="cast_table_form">
+                <div class="cast_table_from_row">
+                    <label>Дата первого спектакля: <input type="date" id="from_date_cast" name="from_date_cast" value="2023-11-11"></label>
+                    <label>Количество спектаклей: <input type="number" id="how_many_days" name="how_many_days" min="1" max="5" value="1"></label>
+                    <label>Количество ролей: <input type="number" id="how_many_roles" name="how_many_roles" min="1" max="10" value="1"></label>
+                </div>
+                <div class="cast_table_from_row">
+                    <button id="save_cast_settings" type="button" class="button">Сохранить</button>
+                    <button id="load_cast_settings" type="button" class="button">Загрузить</button>
+                    <button type="reset" class="button">Сбросить</button>
+                    <button type="submit" class="button">Отправить</button>
+                </div>
+            </form>
+        </div>
+        <script src="source/js/cast_table.js"></script>
+        <div class="generated_cast">
+            <h1 class="generated_title">Таблица составов</h1>
+        </div>
+    </section>
+</main>
+<footer>
+    <p id="load_time"></p>
+    <a href="https://t.me/alinaiil"><img src="source/img/telegram.png" alt="Telegram" class="contacts_img"></a>
+    <a href="https://github.com/alinaiil"><img src="source/img/github.png" alt="Github" class="contacts_img"></a>
+    <a href="mailto:alinail03@mail.ru"><img src="source/img/email.png" alt="Email" class="contacts_img"></a>
+</footer>
+</body>
+</html>
